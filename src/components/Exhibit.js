@@ -29,7 +29,6 @@ export default class Exhibit extends Component {
       <div className="exhibit">
       <Cage selectedAnimal={this.state.selectedAnimal}/>
       <AnimalSelect 
-      // handleChange={this.handleChange}
       animals={this.props.animals} 
       submitAnimal={this.setAnimal} 
       />

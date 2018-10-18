@@ -15,7 +15,7 @@ function getRandomAnimal (animals) {
 describe('Action Creators', () => {
 
 	  describe('setMammal', () => {
-        xit('retorna una acción apropiadamente formateada', () => {
+        it('retorna una acción apropiadamente formateada', () => {
             const testMammal = getRandomAnimal(mammals);
             expect(setMammal(testMammal)).to.be.deep.equal({
                 type: 'SET_MAMMAL',
@@ -25,7 +25,7 @@ describe('Action Creators', () => {
     });
 
     describe('setBird', () => {
-        xit('retorna la acción apropiadamente formateada', () => {
+        it('retorna la acción apropiadamente formateada', () => {
             const testBird = getRandomAnimal(birds);
             expect(setBird(testBird)).to.be.deep.equal({
                 type: 'SET_BIRD',
@@ -35,7 +35,7 @@ describe('Action Creators', () => {
     });
 
     describe('setFish', () => {
-        xit('retorna la acción apropiadamente formateada', () => {
+        it('retorna la acción apropiadamente formateada', () => {
             const testFish = getRandomAnimal(fish);
             expect(setFish(testFish)).to.be.deep.equal({
                 type: 'SET_FISH',
@@ -65,13 +65,13 @@ describe('Reducer', () => {
         Object.freeze(testStore.getState());
     });
 
-    xit('tiene el estado inicial esperado', () => {
+    it('tiene el estado inicial esperado', () => {
         expect(testStore.getState()).to.be.deep.equal(initialState);
     });
 
     describe('SET_MAMMAL', () => {
         const newMammal = getRandomAnimal(mammals);
-        xit('setea mammal al animal en el action creator (no mutando)', () => {
+        it('setea mammal al animal en el action creator (no mutando)', () => {
             expect(
                 mainReducer(undefined, { type: 'SET_MAMMAL', animal: newMammal})
             ).to.deep.equal({
@@ -87,7 +87,7 @@ describe('Reducer', () => {
 
     describe('SET_BIRD', () => {
         const newBird = getRandomAnimal(birds);
-        xit('setea bird al animal en el action creator (no mutando)', () => {
+        it('setea bird al animal en el action creator (no mutando)', () => {
             expect(
                 mainReducer(undefined, { type: 'SET_BIRD', animal: newBird })
             ).to.deep.equal({
@@ -103,7 +103,7 @@ describe('Reducer', () => {
 
     describe('SET_FISH', () => {
         const newFish = getRandomAnimal(fish);
-        xit('setea fish al animal en el action creator (no mutando)', () => {
+        it('setea fish al animal en el action creator (no mutando)', () => {
             expect(
                 mainReducer(undefined, { type: 'SET_FISH', animal: newFish })
             ).to.deep.equal({
@@ -118,7 +118,7 @@ describe('Reducer', () => {
     });
 
     describe('SET_REPTILE', () => {
-        xit('trata de usar un tipo de acción invalido', () => {
+        it('trata de usar un tipo de acción invalido', () => {
             expect(
                 mainReducer(undefined, { type: 'SET_REPTILE', animal: "Ball Python" })
             ).to.deep.equal(initialState);

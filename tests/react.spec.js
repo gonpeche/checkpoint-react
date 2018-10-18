@@ -7,7 +7,7 @@ import AnimalSelect from '../src/components/AnimalSelect';
 import Cage from '../src/components/Cage';
 import Exhibit from '../src/components/Exhibit';
 
-describe('React components', () => {
+xdescribe('React components', () => {
 let animals = ['Tiger', 'Panda', 'Pig', 'Eagle', 'Flamingo', 'Penguin', 'Seahorse', 'Octopus', 'Stingray']
 
 function getRandomAnimal () {

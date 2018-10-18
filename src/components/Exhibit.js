@@ -4,14 +4,36 @@ import Cage from './Cage';
 
 
 export default class Exhibit extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedAnimal: this.props.selectedAnimal
+    }
+    this.setAnimal = this.setAnimal.bind(this)
+    this.handleChange = this.handleChange.bind(this)
+  }
 
-  constructor() {
-    super();
+  setAnimal(newAnimal) {
+    this.setState({
+      selectedAnimal: newAnimal
+    })
+  }
+
+  handleChange(evt) {
+    // evt.preventDefault()
+    console.log('EVENTO: ',evt)
   }
 
   render () {
   	return (
-	    <div className="exhibit">
+      <div className="exhibit">
+      <Cage selectedAnimal={this.state.selectedAnimal}/>
+      <AnimalSelect 
+      // handleChange={this.handleChange}
+      animals={this.props.animals} 
+      submitAnimal={this.setAnimal} 
+      />
+
 	    </div>
   		)
   }
